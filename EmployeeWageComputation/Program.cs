@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, Hey Harshal How are you!");
+﻿using EmployeeWageComputation;
+
+WageComputation computation = new WageComputation();
+computation.EmployeeAttendence();
