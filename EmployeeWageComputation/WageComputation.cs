@@ -10,7 +10,7 @@ namespace EmployeeWageComputation
     {
         const int WAGE_PER_HOUR = 20, IS_FULL_DAY_HOUR = 8, IS_PART_TIME_HOUR = 4;
         const int IS_FULL_TIME_PRESENT = 1, IS_PART_TIME_PRESENT = 2, WORKING_DAYS_PER_MONTH = 20;
-        int empHrs, totalEmpHrs,totalWorkingDays=0;
+        int empHrs, totalEmpHrs,totalWorkingDays;
         public void EmployeeAttendence()
         {
             Random random = new Random();
@@ -25,7 +25,7 @@ namespace EmployeeWageComputation
         }
         public void CalculateEmpWage()
         {
-            for (int i = 0; i < WORKING_DAYS_PER_MONTH && empHrs < 100; i++)
+            for (int i = 1; i <= WORKING_DAYS_PER_MONTH && empHrs < 100; i++)
             {
                 Random random = new Random();
                 int check = random.Next(0, 3);
@@ -44,7 +44,7 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalEmpHrs += empHrs;
-                Console.WriteLine("Days :" + totalWorkingDays + "Emp Hrs: " + empHrs);
+                Console.WriteLine("Days :" + i+"  " + "Emp Hrs: " + empHrs);
             }
             int totalEmpWage = totalEmpHrs * WAGE_PER_HOUR;
             Console.WriteLine("Total Employee Wage: " + totalEmpWage);
