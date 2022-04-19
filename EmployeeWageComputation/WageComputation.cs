@@ -44,7 +44,7 @@ namespace EmployeeWageComputation
                         break;
                 }
                 totalEmpHrs += empHrs;
-                Console.WriteLine("Days :" + i+"  " + "Emp Hrs: " + empHrs);
+                Console.WriteLine("Days :" + i+"  " + " Emp Hrs: " + empHrs);
             }
             int totalEmpWage = totalEmpHrs * WAGE_PER_HOUR;
             Console.WriteLine("Total Employee Wage: " + totalEmpWage);
