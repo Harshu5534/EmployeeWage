@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputation
 {
-    public class WageComputation
+    public class EmpWageBulderObject
     {
         const int IS_FULL_TIME_PRESENT = 1, IS_PART_TIME_PRESENT = 2;
-        public void EmployeeAttendence(string company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
+        string company;
+        int empRatePerHour, numOfWorkingDays, maxHoursPerMonth, totalEmpWage;
+
+        public EmpWageBulderObject(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        {
+            this.company = company;
+            this.empRatePerHour = empRatePerHour;
+            this.numOfWorkingDays = numOfWorkingDays;
+            this.maxHoursPerMonth = maxHoursPerMonth;    
+        }
+        public void EmployeeAttendence()
         {
             int empHrs, totalEmpHrs=0, totalWorkingDays=0;
-            while(totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
+            while(totalEmpHrs <= this.maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -36,6 +46,10 @@ namespace EmployeeWageComputation
             }
             int totalEmpWage = totalEmpHrs * empRatePerHour;
             Console.WriteLine("Total Employee Wage for Company: " + company + " is: " + totalEmpWage);
+        }
+        public string toString()
+        {
+            return "Total Emp Wage for company: " + this.company + "is: " + this.totalEmpWage;
         }
         
     }
